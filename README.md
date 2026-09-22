@@ -74,4 +74,4 @@ setKineticText("HELLO WORLD");
 6. **Pure Vanilla**: Zero external dependencies, pure HTML, CSS & JavaScript.
 
 ---
-*Created for ARN03.*
+

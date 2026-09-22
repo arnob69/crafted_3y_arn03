@@ -52,7 +52,7 @@ body {
   font-size: clamp(3rem, 8vw, 7.5rem);
   font-weight: 900;
   line-height: 1.1;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   margin: 0;
   user-select: none;

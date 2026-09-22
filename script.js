@@ -7,7 +7,7 @@
  */
 const KINETIC_CONFIG = {
   // 1. Text to animate:
-  text: "CRAFTED 3Y ARN03",
+  text: "I CRAFT THINGS WITH PYTHON",
 
   // 2. Delay between each character entering (ms):
   letterDelay: 105,
@@ -149,6 +149,11 @@ const KINETIC_CONFIG = {
       // 4. Repeat cycle
       const allExitTime = totalChars * KINETIC_CONFIG.exitDelay + 500;
       setTimeout(() => {
+        window.animationDone = true;
+        window.dispatchEvent(new Event('kineticAnimationDone'));
+        if (window.SINGLE_CYCLE_RECORD || window.location.search.includes('record=1')) {
+          return;
+        }
         runCycle();
       }, allExitTime + KINETIC_CONFIG.pauseBeforeNextCycle);
 
@@ -157,11 +162,15 @@ const KINETIC_CONFIG = {
 
   // Initialize
   buildDOM(KINETIC_CONFIG.text);
-  runCycle();
+  if (!window.location.search.includes('manual=1')) {
+    runCycle();
+  }
 
   // Expose global helper to change text on the fly:
   window.setKineticText = function(newText) {
     KINETIC_CONFIG.text = newText;
     buildDOM(newText);
   };
+
+  window.runKineticCycle = runCycle;
 })();
