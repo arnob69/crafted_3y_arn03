@@ -7,7 +7,7 @@
  */
 const KINETIC_CONFIG = {
   // 1. Text to animate:
-  text: "I CRAFT THINGS WITH PYTHON",
+  text: "I CRAFT THINGS WITH PYTHON.",
 
   // 2. Delay between each character entering (ms):
   letterDelay: 105,

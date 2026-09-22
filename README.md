@@ -1,5 +1,5 @@
-# Kinetic Random Split-Text Component 🎨
-> **Crafted by ARN03** • Smooth, unpredictable, kinetic typography with 14 unique entrance animations and infinite vibrant color variations.
+# random_tex_animation_001 :-:
+> **I CRAFT THINGS WITH PYTHON.** • Smooth, unpredictable, kinetic typography with 14 unique entrance animations and infinite vibrant color variations.
 
 ---
 
@@ -20,7 +20,7 @@ Open **`script.js`** in any code editor (VS Code, Notepad++, etc.). At the very 
 ```javascript
 const KINETIC_CONFIG = {
   // 👉 1. Put whatever text you want here:
-  text: "CRAFTED 3Y ARN03",
+  text: "I CRAFT THINGS WITH PYTHON.",
 
   // 2. Speed between each character entering (ms):
   letterDelay: 105,
@@ -74,13 +74,4 @@ setKineticText("HELLO WORLD");
 6. **Pure Vanilla**: Zero external dependencies, pure HTML, CSS & JavaScript.
 
 ---
-
-## 🎥 Demo
-
-<div align="center">
-  <video src="demo.mp4" width="100%" style="max-width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; display: block;" controls autoplay loop muted playsinline>
-    <source src="demo.mp4" type="video/mp4">
-    <p>Your browser does not support the video tag. Watch the video <a href="demo.mp4">here</a>.</p>
-  </video>
-</div>
 
