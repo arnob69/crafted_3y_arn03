@@ -1,0 +1,283 @@
+/* ==========================================================================
+   Kinetic Random Split-Text Component
+   Font: Nohemi Variable Font
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Nohemi';
+  src: url('Nohemi-VF-BF6438cc58ad63d.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg-color: #09090b;
+  --text-default: #ffffff;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  color: var(--text-default);
+  font-family: 'Nohemi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+}
+
+/* Container Stage */
+.kinetic-stage {
+  width: 100%;
+  max-width: 1280px;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+}
+
+/* Kinetic Title Wrapper */
+.kinetic-title {
+  font-family: 'Nohemi', sans-serif;
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  margin: 0;
+  user-select: none;
+  cursor: default;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0 0.35em;
+}
+
+.kinetic-word {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.kinetic-char {
+  display: inline-block;
+  opacity: 0;
+  transform: scale(0);
+  will-change: transform, opacity, filter;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.25s ease;
+  text-shadow: none !important;
+  filter: none;
+}
+
+.kinetic-char:hover {
+  transform: scale(1.18) rotate(5deg) translateY(-6px) !important;
+  filter: brightness(1.2) !important;
+  cursor: pointer;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   14 RANDOM KINETIC ENTRANCE ANIMATIONS
+   ══════════════════════════════════════════════════════════════ */
+
+/* 1. Spring Pop */
+.anim-pop {
+  animation: kPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+@keyframes kPop {
+  0% { opacity: 0; transform: scale(0) rotate(-22deg); }
+  70% { transform: scale(1.24) rotate(5deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* 2. Top Dropdown Bounce */
+.anim-drop {
+  animation: kDrop 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+@keyframes kDrop {
+  0% { opacity: 0; transform: translateY(-110px) rotate(-14deg); }
+  75% { transform: translateY(12px) rotate(4deg); }
+  100% { opacity: 1; transform: translateY(0) rotate(0deg); }
+}
+
+/* 3. Bottom Rise Elastic */
+.anim-rise {
+  animation: kRise 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+@keyframes kRise {
+  0% { opacity: 0; transform: translateY(110px) scale(0.5) rotate(14deg); }
+  75% { transform: translateY(-12px) scale(1.14) rotate(-4deg); }
+  100% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+}
+
+/* 4. 360 Vortex Spin */
+.anim-spin {
+  animation: kSpin 0.65s cubic-bezier(0.2, 0.8, 0.3, 1.2) forwards;
+}
+@keyframes kSpin {
+  0% { opacity: 0; transform: rotate(-360deg) scale(0.15); }
+  80% { transform: rotate(20deg) scale(1.18); }
+  100% { opacity: 1; transform: rotate(0deg) scale(1); }
+}
+
+/* 5. 3D Flip */
+.anim-flip {
+  animation: kFlip 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+@keyframes kFlip {
+  0% { opacity: 0; transform: perspective(450px) rotateY(115deg) scale(0.2); }
+  70% { transform: perspective(450px) rotateY(-18deg) scale(1.16); }
+  100% { opacity: 1; transform: perspective(450px) rotateY(0deg) scale(1); }
+}
+
+/* 6. Zoom Snap with Lens Blur */
+.anim-zoom {
+  animation: kZoom 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes kZoom {
+  0% { opacity: 0; transform: scale(3.2); filter: blur(16px); }
+  100% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+/* 7. Rubber Band Stretch */
+.anim-rubber {
+  animation: kRubber 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+@keyframes kRubber {
+  0% { opacity: 0; transform: scale(0.2, 2.5); }
+  40% { opacity: 1; transform: scale(1.35, 0.7); }
+  65% { transform: scale(0.85, 1.15); }
+  85% { transform: scale(1.08, 0.95); }
+  100% { opacity: 1; transform: scale(1, 1); }
+}
+
+/* 8. Pendulum Swing */
+.anim-swing {
+  animation: kSwing 0.75s ease-out forwards;
+  transform-origin: top center;
+}
+@keyframes kSwing {
+  0% { opacity: 0; transform: rotate(-85deg); }
+  40% { opacity: 1; transform: rotate(35deg); }
+  65% { transform: rotate(-18deg); }
+  85% { transform: rotate(8deg); }
+  100% { opacity: 1; transform: rotate(0deg); }
+}
+
+/* 9. Cyberpunk Glitch Burst */
+.anim-glitch {
+  animation: kGlitch 0.5s steps(2, jump-none) forwards;
+}
+@keyframes kGlitch {
+  0% { opacity: 0; transform: translate(-25px, 8px) skewX(25deg); filter: invert(0.8); }
+  30% { opacity: 1; transform: translate(15px, -6px) skewX(-20deg); filter: hue-rotate(90deg); }
+  60% { transform: translate(-8px, 3px) skewX(10deg); filter: none; }
+  80% { transform: translate(4px, -2px) skewX(-4deg); }
+  100% { opacity: 1; transform: translate(0, 0) skewX(0deg); }
+}
+
+/* 10. Jelly Wobble */
+.anim-jelly {
+  animation: kJelly 0.7s ease forwards;
+}
+@keyframes kJelly {
+  0% { opacity: 0; transform: scale3d(0.3, 0.3, 0.3); }
+  30% { opacity: 1; transform: scale3d(1.3, 0.75, 1); }
+  40% { transform: scale3d(0.75, 1.25, 1); }
+  50% { transform: scale3d(1.18, 0.85, 1); }
+  65% { transform: scale3d(0.95, 1.05, 1); }
+  80% { transform: scale3d(1.05, 0.98, 1); }
+  100% { opacity: 1; transform: scale3d(1, 1, 1); }
+}
+
+/* 11. 3D Tumbler Roll */
+.anim-tumble {
+  animation: kTumble 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+@keyframes kTumble {
+  0% { opacity: 0; transform: perspective(400px) rotateX(180deg) rotateZ(45deg) translateY(-80px); }
+  70% { transform: perspective(400px) rotateX(-20deg) rotateZ(-8deg) translateY(6px); }
+  100% { opacity: 1; transform: perspective(400px) rotateX(0deg) rotateZ(0deg) translateY(0); }
+}
+
+/* 12. Kinetic Angle Shear */
+.anim-skew {
+  animation: kSkew 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.3) forwards;
+}
+@keyframes kSkew {
+  0% { opacity: 0; transform: translateX(-60px) skewX(-35deg) scale(0.6); }
+  75% { transform: translateX(8px) skewX(8deg) scale(1.12); }
+  100% { opacity: 1; transform: translateX(0) skewX(0deg) scale(1); }
+}
+
+/* 13. Spiral Orbit */
+.anim-spiral {
+  animation: kSpiral 0.7s cubic-bezier(0.1, 0.85, 0.25, 1.2) forwards;
+}
+@keyframes kSpiral {
+  0% { opacity: 0; transform: scale(0.1) rotate(540deg) translateY(120px); }
+  80% { transform: scale(1.15) rotate(-15deg) translateY(-8px); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg) translateY(0); }
+}
+
+/* 14. Flash Strobe */
+.anim-flash {
+  animation: kFlash 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes kFlash {
+  0% { opacity: 0; transform: scale(1.8); filter: brightness(2.5); }
+  40% { opacity: 1; transform: scale(0.9); filter: brightness(1.8); }
+  75% { transform: scale(1.1); filter: brightness(1.2); }
+  100% { opacity: 1; transform: scale(1); filter: brightness(1); }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RANDOMIZED DIVERSE EXIT ANIMATIONS
+   ══════════════════════════════════════════════════════════════ */
+
+/* Exit 1: Float Up & Blur */
+.exit-up {
+  animation: kExitUp 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes kExitUp {
+  0% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+  100% { opacity: 0; transform: scale(0.4) translateY(-45px); filter: blur(10px); }
+}
+
+/* Exit 2: Gravity Drop Down */
+.exit-drop {
+  animation: kExitDrop 0.45s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+@keyframes kExitDrop {
+  0% { opacity: 1; transform: translateY(0) rotate(0deg); }
+  100% { opacity: 0; transform: translateY(65px) rotate(20deg) scale(0.5); filter: blur(8px); }
+}
+
+/* Exit 3: Spin Out Vortex */
+.exit-spin {
+  animation: kExitSpin 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes kExitSpin {
+  0% { opacity: 1; transform: scale(1) rotate(0deg); }
+  100% { opacity: 0; transform: scale(0) rotate(280deg); filter: blur(12px); }
+}
+
+/* Exit 4: Implode Shrink */
+.exit-implode {
+  animation: kExitImplode 0.4s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
+}
+@keyframes kExitImplode {
+  0% { opacity: 1; transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.25); filter: brightness(2); }
+  100% { opacity: 0; transform: scale(0); filter: brightness(3); }
+}
