@@ -1,4 +1,4 @@
-# random_tex_animation_001 :-:
+# random_text_animation_001 :-:
 > **I CRAFT THINGS WITH PYTHON.** • Smooth, unpredictable, kinetic typography with 14 unique entrance animations and infinite vibrant color variations.
 
 ---
