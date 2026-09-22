@@ -75,3 +75,12 @@ setKineticText("HELLO WORLD");
 
 ---
 
+## 🎥 Demo
+
+<div align="center">
+  <video src="demo.mp4" width="100%" style="max-width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; display: block;" controls autoplay loop muted playsinline>
+    <source src="demo.mp4" type="video/mp4">
+    <p>Your browser does not support the video tag. Watch the video <a href="demo.mp4">here</a>.</p>
+  </video>
+</div>
+
